@@ -33,7 +33,7 @@ public class Basico{
         double           8 bytes     primitivo         15 digitos dps da virgula
 
         char             2 bytes     primitivo         um caracter/letra/ASCII value
-        String           varia       referencia         uma sequencia de caracteres
+        String           varia       referencia        uma sequencia de caracteres
         */
         
         // EXEMPLOS
