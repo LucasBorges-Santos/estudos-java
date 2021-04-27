@@ -2,30 +2,77 @@ import java.util.*;
 
 // METHOOD
 public class Funcoes{
-    public static List<Integer> calculation(int maxDigit) {
-        List<Integer> numerosFinal = new ArrayList<>();
-        
-        for(int num1 = 0; num1 <= maxDigit ;num1++){
-            for(int num2 = 0; num2 <= maxDigit ;num2++){
-                for(int num3 = 0; num3 <= maxDigit ;num3++){
-                    for(int num4 = 0; num4 <= maxDigit ;num4++){
-                        if(num1 + num2 + num3 + num4 == 21){
-                            String num = "" + num1 +num2+ num3 + num4;
-                            numerosFinal.add(Integer.parseInt(num));
-                        }
-                    }
-                }
+    static void minhaFuncao(){
+        System.out.println("Funcao executada");
+    }
+
+    // usamos o static para dizer que sempre será a mesma
+    // usamos void para dizer que ela n retorna valores
+    static void ola(String nome){
+        System.out.println("Ola " + nome);
+    }
+
+    // para retornarmos um valor, ao invez de void, utilizamos o return e o tipo de retorno
+    // neste caso, temos uma função que retorna um numero inteiro
+    static int aoQuadrado(int x){
+        return x * x;
+    }
+
+    static void pessoa(String nome, int idade){
+        System.out.println("Nome: " + nome + ", " + "Idade: " + idade);
+    }
+
+    // função com if e else
+    static void checarIdade(int idade){
+        if(idade >= 18){
+            System.out.println("Acesso permitido.");
+        } else{
+            System.out.println("Acesso negado.");
+        }
+    }
+
+    // criar uma String com array
+    static String stringNomes(ArrayList<String> arrayNome){
+        String resultado = ""; 
+        for(int i = 0; i < arrayNome.size() ;i++)
+            if(i == arrayNome.size() - 1){
+                resultado = resultado + arrayNome.get(i);
+            } else{
+                resultado = resultado + arrayNome.get(i) + ", ";
             }
-        }
-        
-        if(numerosFinal.isEmpty()){
-            numerosFinal.add(null);
-        }
-        
-        return numerosFinal;
+           
+
+        return resultado;
     }
 
     public static void main(String[] args){
-        System.out.println(calculation(6));
+        // executar função
+        minhaFuncao();
+
+        // PARAMETROS
+
+        // executando função com String
+        ola("Lucas");
+
+        // retornando valores
+        // executando função com int
+        System.out.println(aoQuadrado(5));
+
+        // varios parametros
+        pessoa("Lucas", 19);
+
+        // if/else
+        checarIdade(17);
+        checarIdade(19);
+
+        // com ArrayList
+        ArrayList<String> nomes = new ArrayList<>();
+        nomes.add("Lucas");
+        nomes.add("Luma");
+        nomes.add("Mel");
+
+        String resultado = stringNomes(nomes);
+
+        System.out.println(resultado);
     }
 }
