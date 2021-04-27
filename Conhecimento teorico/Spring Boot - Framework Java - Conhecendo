@@ -1,0 +1,65 @@
+Spring Boot
+
+Entendendo o básico
+
+O que é Spring?
+"O Spring é um framework Java criado com o objetivo de facilitar o desenvolvimento de aplicações, explorando, para isso, os conceitos de Inversão de Controle e Injeção de Dependências. Dessa forma, ao adotá-lo, temos à nossa disposição uma tecnologia que nos fornece não apenas recursos necessários à grande parte das aplicações, como módulos para persistência de dados, integração, segurança, testes, desenvolvimento web, como também um conceito a seguir que nos permite criar soluções menos acopladas, mais coesas e, consequentemente, mais fáceis de compreender e manter."
+
+Spring Framework - caracteristicas 
+1 - A primeira diferença é que ele não precisa de um servidor de aplicação para funcionar. Fazendo uso apenas da JVM, o Spring traz para o programador recursos que antes só estavam disponíveis para soluções corporativas;
+2 - Com Spring também passamos a utilizar apenas aquilo que é necessário para o projeto. Como mencionado agora há pouco, a plataforma J2EE e os EJBs nos levavam a implementar comportamentos que não eram necessários. Esse diferencial do Spring torna a arquitetura mais leve, fácil de compreender, manter e evoluir;
+3 - Outro diferencial é que ele é baseado na inversão de controle e injeção de dependência, fornecendo para isso um container, que representa o núcleo do framework e que é responsável por criar e gerenciar os componentes da aplicação, os quais são comumente chamados de beans.
+Conhecimento aprofundado em:
+https://www.devmedia.com.br/exemplo/como-comecar-com-spring/73
+Containers
+"Dificilmente uma aplicação gráfica é composta por um único componente, mas sim por vários componentes inter-relacionados. Para este tipo de aplicação, um componente fundamental é a área onde os demais componentes da aplicação estarão dispostos. Um componente que pode conter outros componentes é denominado um container."
+
+Inversão de controle e injeção de dependências
+"Basicamente, a Inversão de Controle é uma forma diferente que temos para manipular o controle sobre um objeto. É um padrão. Gosto de pensar na Inversão de Controle como sendo a mudança de conhecimento que uma classe tem em relação à outra."
+No geral, inversão de controle, é uma forma diferente de lidar com objetos, uma forma mais facil, mais organizada, onde não precisamos instanciar um objeto toda vez que formos utiliza-lo, vamos injetalo toda vez que precisarmos.
+"usamos a injeção de dependencias para resolvermos a inversão de controle"
+
+Conhecimento aprofundado em:
+https://www.devmedia.com.br/inversao-de-controle-x-injecao-de-dependencia/18763
+
+Funcionalidades do Spring Boot
+⦁	Aplicações Spring stand-alone (que rodam sozinhas):
+	Permite executar suas aplicação spring utilizando apenas a JDK
+		>>> java -jar sua-aplicacao.jar
+	Facilita criação de conteiners docker que rodam a sua aplicação
+
+⦁	Permite embarcar o Web Container (Todas as ferramentas necessarias para se utilizar funcionalidades Web em java):
+	Tomcat, Jetty ou Undertow
+	- Não usa arquivos WAR
+	- Não precisa instalar servidor de aplicação para rodar
+	- Simplifica a execução, a configuração dos ambientes de 	desenvolvimento, teste e produção. (não preciso configurar o 	ambiente virtual da maquina para rodar a aplicação)
+
+⦁	Prove dependencias "starter"
+	- antigamente, uma apliação String, precisava de diversas 	configurações e atualmente, não é mais necessarios configurar 	tanto 	dessa forma, ele ja pré configura toda a aplicação
+
+⦁	Configura automaticamente as bibliotecas
+	- os starter traz muitas configurações prontas para uso
+	Por exemplo, com o Spring Web já configura o DispatcherSevlet 	(despacha pedidos para os controladores do padrão MVC)
+
+⦁	Prove funcionalidades prontas para a produção como métricas, health checks e configuração externa
+	- O Spring Boot traz o Spring Actuator
+		Permite monitorar a aplicação de forma padronizada
+		
+⦁	Não faz geração de código e não precisa de configuração em XML
+	- Ele deixa as configurações de uma aplicação Spring mais fáceis
+	- Suas configurações podem ser feitas via java (Java Config) e 	application.properties (maior parte das propriedades necessarias)
+
+⦁	Possuimos o Spring DevTools
+	- Permite restart automatico da aplicação quando se altera alguma 	classe
+	- Utiliza o livereload para permitir uma visualização ainda mais 	rápida da alteração feita
+	- funciona remotamente
+Conclusão
+	No geral podemos definir Spring Boot como um framework com diversas ferramentas de desenvolvimento em java, desde aplicações web até banco de dados, fazendo com que o desenvolvimento seja ainda mais rapido e organizado, buscando sempre a facilidade e o entendimento.
+
+Referencias de estudo
+https://www.youtube.com/watch?v=U5XMF4XmKUc
+https://spring.io/projects
+https://www.devmedia.com.br/exemplo/como-comecar-com-spring/73
+https://www.devmedia.com.br/inversao-de-controle-x-injecao-de-dependencia/18763
+https://qastack.com.br/programming/936197/what-is-the-difference-between-application-server-and-web-server
+https://www.devmedia.com.br/spring-framework-mvc-mapeamento-do-dispatcher-servlet/34057
